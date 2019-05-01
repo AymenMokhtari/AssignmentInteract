@@ -10,15 +10,21 @@ import com.android.volley.NoConnectionError;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.aymenmokthari.model.Contact;
+import com.github.aymenmokthari.model.ListContact;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,10 +73,11 @@ public class Helper {
                                 String id = user.getString("id");
                                 String first_name = user.getString("firstName");
                                 String last_name = user.getString("lastName");
+                                String authToken = response.getJSONObject("token").getString("authToken");
                                 Toast.makeText(context, "Welcome " + first_name + " " + last_name, Toast.LENGTH_LONG).show();
 
                                 Log.d(TAG, "Welcome " + first_name + " " + last_name);
-                                volleyCallbackUserLogin.onSuccessResponse(id, email, password);
+                                volleyCallbackUserLogin.onSuccessResponse(id, email, authToken);
                                 // Inserting row in users table
 
 
@@ -130,9 +137,147 @@ public class Helper {
         queue.add(getRequest);
 
     }
+
+
+
+    public void getActiveLists ( final String authToken , final VolleyCallbackGetActiveLists callback){
+
+
+        RequestQueue queue = Volley.newRequestQueue(context);
+        final String url = ip_address+"/lists";
+
+        Log.i("link",url);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        System.out.println(response);
+                        try {
+                            ArrayList<ListContact> listContacts = new ArrayList<>();
+
+                            JSONArray array = new JSONArray(response);
+                            for (int i = 0; i < array.length(); i++){
+                                JSONObject j = array.getJSONObject(i);
+                                listContacts.add( new ListContact(  j.getInt( "id" ), j.getString( "name" ) , j.getInt( "contactsCount" )) );
+                                // Log.d( TAG, "onResponse:  "+j.get( "foodname" ) );
+
+                            }
+                            callback.onSuccessResponse( listContacts );
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle error
+                        System.out.println("Erreur "+error.getMessage());
+                        callback.onFail( error.getMessage() );
+                    }
+                }) {
+
+
+                    @Override
+                    public Map<String,String> getHeaders(){
+                        HashMap<String, String> headers = new HashMap<String, String>();
+
+                        headers.put("Content-Type", "application/json; charset=utf-8");
+                        headers.put("authToken",authToken);
+                        Log.d(TAG, "getHeaders: "+headers);
+                        return headers;
+                    }
+                };
+
+// add it to the RequestQueue
+        queue.add(stringRequest);
+    }
+
+
+    public void GetListContacts ( final String authToken ,int listId, final VolleyCallbackGetListContacts callback){
+
+
+        RequestQueue queue = Volley.newRequestQueue(context);
+        final String url = ip_address+"/lists/"+String.valueOf(listId)+"/contacts";
+
+        Log.i("link",url);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        System.out.println(response);
+                        try {
+                            ArrayList<Contact> contacts = new ArrayList<>();
+                            JSONObject object = new JSONObject(response);
+
+                            JSONArray array = object.getJSONArray("data");
+                            for (int i = 0; i < array.length(); i++){
+                                JSONObject j = array.getJSONObject(i);
+
+
+                                contacts.add( new Contact(  j.getString( "firstName" ), j.getString( "lastName" ) , j.getJSONArray( "emails" ).getJSONObject(0).getString("email")) );
+                                // Log.d( TAG, "onResponse:  "+j.get( "foodname" ) );
+
+                            }
+                            callback.onSuccessResponse( contacts );
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle error
+                        System.out.println("Erreur "+error.getMessage());
+                        callback.onFail( error.getMessage() );
+                    }
+                }) {
+
+
+            @Override
+            public Map<String,String> getHeaders(){
+                HashMap<String, String> headers = new HashMap<String, String>();
+
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                headers.put("authToken",authToken);
+                Log.d(TAG, "getHeaders: "+headers);
+                return headers;
+            }
+        };
+
+// add it to the RequestQueue
+        queue.add(stringRequest);
+    }
+
+
+
+    //Volley  callbacks
     public interface VolleyCallbackUserLogin {
-        void onSuccessResponse(String id , String email,   String password);
+        void onSuccessResponse(String id , String email,   String authToken);
         void onFail(String msg);
     }
+    public interface VolleyCallbackGetActiveLists {
+        void onSuccessResponse(ArrayList<ListContact> result);
+        void onFail(String msg);
+    }
+
+    public interface VolleyCallbackGetListContacts {
+        void onSuccessResponse(ArrayList<Contact> result);
+        void onFail(String msg);
+    }
+
+
+
 
 }

@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
                 helper.loginUser( email, password, new Helper.VolleyCallbackUserLogin() {
                     @Override
-                    public void onSuccessResponse(String id, String email, String password) {
+                    public void onSuccessResponse(String id, String email, String authToken) {
 
 
-                        session.setLoggedin(true,email , password , id);
+                        session.setLoggedin(true,email , id, authToken);
 
-                        Intent intent = new Intent( MainActivity.this, ListContactActivity.class );
+                        Intent intent = new Intent( MainActivity.this, ListActivity.class );
                         Log.d("new intent" , "net intend");
                         startActivity( intent );
                     }

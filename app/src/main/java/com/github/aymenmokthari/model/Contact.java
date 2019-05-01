@@ -1,17 +1,19 @@
-package com.github.aymenmokthari;
+package com.github.aymenmokthari.model;
 
-public class Contact {
+
+
+public class Contact   {
     private  String firstName ;
     private  String lastName ;
     private  String email ;
-    private  String img ;
 
 
-    public Contact(String firstName, String lastName, String email, String img) {
+
+    public Contact(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.img = img;
+
     }
 
     public String getFirstName() {
@@ -38,11 +40,5 @@ public class Contact {
         this.email = email;
     }
 
-    public String getImg() {
-        return img;
-    }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
 }

@@ -1,29 +1,29 @@
 
 package com.github.aymenmokthari;
 
-        import android.content.Context;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ArrayAdapter;
-        import android.widget.TextView;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
+import com.github.aymenmokthari.model.Contact;
+import com.github.aymenmokthari.model.ListContact;
 
-        import com.github.aymenmokthari.model.Contact;
-
-        import java.util.List;
+import java.util.List;
 
 /**
  * Created by Aymen on 10/28/2017.
  */
 
-public class ContactAdapter  extends ArrayAdapter<Contact> {
+public class ListAdapter extends ArrayAdapter<ListContact> {
 
     private int resourceId = 0;
     private LayoutInflater inflater;
     public Context mContext;
 
-    public ContactAdapter(Context context, int resourceId, List<Contact> mediaItems) {
+    public ListAdapter(Context context, int resourceId, List<ListContact> mediaItems) {
         super(context, 0, mediaItems);
         this.resourceId = resourceId;
         this.mContext = context;
@@ -34,7 +34,7 @@ public class ContactAdapter  extends ArrayAdapter<Contact> {
 
     //ViewHolder Design Pattern
     static class ViewHolder {
-        public TextView name, email;
+        public TextView listname, contactsCount;
     }
 
     @Override
@@ -48,16 +48,16 @@ public class ContactAdapter  extends ArrayAdapter<Contact> {
 
         //Configuration du ViewHolder
         ViewHolder viewHolder = new ViewHolder();
-        viewHolder.name = (TextView) rowView.findViewById(R.id.name);
-        viewHolder.email = (TextView) rowView.findViewById(R.id.email);
+        viewHolder.listname = (TextView) rowView.findViewById(R.id.listname);
+        viewHolder.contactsCount = (TextView) rowView.findViewById(R.id.contactsCount);
         rowView.setTag(viewHolder);
 
         //Affecter les données aux Views
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        Contact contact = getItem(position);
+        ListContact listContact = getItem(position);
 
-        holder.name.setText(contact.getFirstName() +""+contact.getLastName());
-        holder.email.setText(contact.getEmail());
+        holder.listname.setText(listContact.getName());
+        holder.contactsCount.setText(String.valueOf(listContact.getContactsCount()));
         notifyDataSetChanged();
 
         return rowView;

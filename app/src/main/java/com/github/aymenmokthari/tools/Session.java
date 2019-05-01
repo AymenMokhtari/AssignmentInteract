@@ -20,11 +20,11 @@ public class Session {
         editor = prefs.edit();
     }
 
-    public void setLoggedin(boolean logggedin, String email , String password , String id){
+    public void setLoggedin(boolean logggedin, String email , String id, String authToken){
         editor.putBoolean("loggedInmode",logggedin);
         editor.putString("id",id );
         editor.putString("email",email);
-        editor.putString("password",password);
+        editor.putString("authToken",authToken);
 
 
 
