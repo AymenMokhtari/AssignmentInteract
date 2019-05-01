@@ -19,7 +19,7 @@
             android:layout_height="72dp"
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="60dp"/>
 
         <TextView
             android:id="@+id/text1"
@@ -27,12 +27,27 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
-            android:text="PLEASE LOGIN TO YOUR ACCOUNT. "
+
+            android:text="Welcom to Interact.io"
             android:textAlignment="center"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textColor="@color/orange"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="Sign in to continue"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+
+            android:textColor="@color/blackgrey"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+
 
 
         <EditText
@@ -40,7 +55,7 @@
             android:layout_width="280dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:alpha="0.5"
             android:background="@drawable/edittextstyle"
             android:hint="Your Email address"
@@ -72,23 +87,6 @@
             android:background="@drawable/btnraduis"
             android:text="Login"
             android:textColor="@color/white" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp" >
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@color/orange" />
-
-        </RelativeLayout>
 
 
 

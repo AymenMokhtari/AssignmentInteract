@@ -109,6 +109,8 @@ public class ListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Log.d("itemid", "onOptionsItemSelected: "+item.getItemId());
+        session.setLoggedin(false,"" , "", "");
+
         Intent intent = new Intent(ListActivity.this, MainActivity.class);
         startActivity(intent);
         return true;

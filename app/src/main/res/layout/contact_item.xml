@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:background="?attr/selectableItemBackground"
     android:clickable="true"
     android:paddingBottom="@dimen/row_padding"
@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/row_padding">
 
     <TextView
-        android:id="@+id/contactsCount"
+        android:id="@+id/firstchar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:textSize="18sp"
@@ -27,18 +27,27 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/contactsCount"
+        android:layout_toRightOf="@+id/firstchar"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/contact_name"
+        android:text="ssfdsfqdsf"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
         android:textSize="@dimen/contact_name" />
 
     <TextView
         android:id="@+id/email"
+
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/name"
-        android:layout_toRightOf="@id/contactsCount"
-        android:textColor="@color/contact_number"
-        android:textSize="@dimen/contact_number" />
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/firstchar"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/contact_email"
+        android:text="sdfsdfsfd"
+
+        android:textSize="@dimen/contact_email" />
+    >
 
 </RelativeLayout>

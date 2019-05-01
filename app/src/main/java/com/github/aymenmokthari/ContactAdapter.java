@@ -34,7 +34,7 @@ public class ContactAdapter  extends ArrayAdapter<Contact> {
 
     //ViewHolder Design Pattern
     static class ViewHolder {
-        public TextView name, email;
+        public TextView firstchar ,name, email;
     }
 
     @Override
@@ -48,6 +48,7 @@ public class ContactAdapter  extends ArrayAdapter<Contact> {
 
         //Configuration du ViewHolder
         ViewHolder viewHolder = new ViewHolder();
+        viewHolder.firstchar  = (TextView) rowView.findViewById(R.id.firstchar);
         viewHolder.name = (TextView) rowView.findViewById(R.id.name);
         viewHolder.email = (TextView) rowView.findViewById(R.id.email);
         rowView.setTag(viewHolder);
@@ -56,6 +57,8 @@ public class ContactAdapter  extends ArrayAdapter<Contact> {
         ViewHolder holder = (ViewHolder) rowView.getTag();
         Contact contact = getItem(position);
 
+
+        holder.firstchar.setText(Character.toString(contact.getFirstName().toUpperCase().charAt(0)));
         holder.name.setText(contact.getFirstName() +""+contact.getLastName());
         holder.email.setText(contact.getEmail());
         notifyDataSetChanged();
