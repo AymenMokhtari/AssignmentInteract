@@ -86,7 +86,7 @@ public class ListActivity extends AppCompatActivity {
                 Log.d("listcontatformlist", "onItemClick: "+listContact.getId());
 
                 Intent intent = new Intent(ListActivity.this, ListContactActivity.class);
-                intent.putExtra("contact",listContact );
+                intent.putExtra("listId",listContact.getId() );
                 startActivity(intent);
             }
         });

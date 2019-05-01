@@ -1,0 +1,8 @@
+<item
+android:id="@+id/logout"
+android:orderInCategory="400"
+android:title="Logout"
+android:icon="@drawable/ic_logout"
+app:showAsAction="ifRoom" />
+
+
