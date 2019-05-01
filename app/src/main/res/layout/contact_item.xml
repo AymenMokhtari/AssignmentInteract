@@ -9,18 +9,25 @@
     android:paddingRight="@dimen/activity_margin"
     android:paddingTop="@dimen/row_padding">
 
-    <ImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="@dimen/thumbnail"
-        android:layout_height="@dimen/thumbnail"
+    <TextView
+        android:id="@+id/contactsCount"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/circle"
+        android:contentDescription="@string/app_name"
+        android:shadowRadius="10.0"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/row_padding" />
+        android:text="5"/>
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/thumbnail"
+        android:layout_toRightOf="@id/contactsCount"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/contact_name"
         android:textSize="@dimen/contact_name" />
@@ -30,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
-        android:layout_toRightOf="@id/thumbnail"
+        android:layout_toRightOf="@id/contactsCount"
         android:textColor="@color/contact_number"
         android:textSize="@dimen/contact_number" />
 

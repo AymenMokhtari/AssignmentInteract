@@ -9,6 +9,9 @@
     <ListView
         android:id="@+id/listLV"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:divider="#ffa187"
+        android:dividerHeight="2px"
+        android:footerDividersEnabled="true"/>
 
 </LinearLayout>
