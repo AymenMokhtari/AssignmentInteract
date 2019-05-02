@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -54,38 +55,50 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 String email = username.getText().toString();
                 final String password = pass.getText().toString();
 
-
-                helper.loginUser( email, password, new Helper.VolleyCallbackUserLogin() {
-                    @Override
-                    public void onSuccessResponse(String id, String email, String authToken) {
+                if (!isValidEmail(email)) {
+                    Toast.makeText(getBaseContext(), "Please enter a valid email address", Toast.LENGTH_SHORT).show();
 
 
-                        session.setLoggedin(true,email , id, authToken);
-
-                        Intent intent = new Intent( MainActivity.this, ListActivity.class );
-                        Log.d("new intent" , "net intend");
-                        startActivity( intent );
-                    }
-
-                    @Override
-                    public void onFail(String msg) {
-                            Log.d("ddd",msg);
-                    }
-                } );
-
-                Log.d( "fsdf", email+"---"+password );
+                } else {
+                    helper.loginUser(email, password, new Helper.VolleyCallbackUserLogin() {
+                        @Override
+                        public void onSuccessResponse(String id, String email, String authToken) {
 
 
+                            session.setLoggedin(true, email, id, authToken);
 
-                //authenticate user
+                            Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                            Log.d("new intent", "net intend");
+                            startActivity(intent);
+                        }
 
+                        @Override
+                        public void onFail(String msg) {
+                            Log.d("ddd", msg);
+                        }
+                    });
+
+                    Log.d("fsdf", email + "---" + password);
+
+
+                    //authenticate user
+
+                }
             }
         });
     }
-
+    public final static boolean isValidEmail(CharSequence target) {
+        if (TextUtils.isEmpty(target)) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+        }
+    }
 
 
 

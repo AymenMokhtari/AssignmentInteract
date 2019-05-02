@@ -11,19 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a45b68c2-ac8d-4533-9b6b-d108e51e8f0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/romyjules.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/aweseomseason.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/fontania.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/fontaniaswah.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitoblack.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitobold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitoextrabold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitoextralight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitolight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitomedium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitoregular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/nunitosemibold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/romyjules.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -31,13 +18,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/ContactAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/ContactAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/tools/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/tools/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +75,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="3" />
-          <entry key="java" value="2460" />
+          <entry key="java" value="2492" />
           <entry key="txt" value="45" />
           <entry key="xml" value="954" />
         </counts>
@@ -101,7 +83,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="2460" />
+          <entry key="JAVA" value="2492" />
           <entry key="PLAIN_TEXT" value="45" />
           <entry key="XML" value="954" />
         </counts>
@@ -120,18 +102,17 @@
           <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/helper/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="261" column="15" selection-start-line="261" selection-start-column="15" selection-end-line="261" selection-end-column="15" />
+            <state relative-caret-position="130">
+              <caret line="255" column="28" selection-start-line="255" selection-end-line="256" />
               <folding>
                 <element signature="method#loginUser#0;class#Helper#0" />
                 <element signature="e#3502#5756#0" expanded="true" />
                 <element signature="e#5755#5756#0" expanded="true" />
                 <element signature="method#getActiveLists#0;class#Helper#0" />
                 <element signature="method#GetListContacts#0;class#Helper#0" />
-                <element signature="method#connectionCheck#0;class#Helper#0" />
               </folding>
             </state>
           </provider>
@@ -154,13 +135,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+            <state relative-caret-position="129">
+              <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1727#3009#0" expanded="true" />
+                <element signature="e#3008#3009#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -235,7 +218,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>listcontatformlist</find>
       <find>item</find>
       <find>auth</find>
       <find>putExtra</find>
@@ -244,7 +226,6 @@
       <find>toke</find>
       <find>LOGOUT</find>
       <find>INTEN</find>
-      <find>authto</find>
       <find>LO</find>
       <find>butt</find>
       <find>login</find>
@@ -260,11 +241,13 @@
       <find>sp</find>
       <find>onErrorResponse</find>
       <find>timeou</find>
-      <find>toast</find>
       <find>Cannot connect to Internet...Plea</find>
       <find>ErrorListener</find>
       <find>errorli</find>
+      <find>authto</find>
       <find>connectionCheck</find>
+      <find>toast</find>
+      <find>isValidEmail</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Aymen\AndroidStudioProjects\Assignment\app</dir>
@@ -303,9 +286,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_items.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/ContactAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/tools/Session.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/helper/Helper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -332,18 +315,25 @@
             <path>
               <item name="Assignment" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Assignment" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="aymenmokthari" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="aymenmokthari" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Assignment" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Assignment" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="font" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -483,12 +473,12 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.87315434" visible="true" weight="0.33617023" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.8724832" visible="true" weight="0.33617023" />
       <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49798658" weight="0.32907802" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49932885" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49395972" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.12684564" side_tool="true" visible="true" weight="0.33617023" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49328858" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.12751678" side_tool="true" visible="true" weight="0.33617023" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.48926175" weight="0.30070922" />
       <window_info anchor="bottom" id="Find" order="8" />
@@ -764,16 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/font/romyjules.ttf">
       <provider selected="true" editor-type-id="fontseditor" />
     </entry>
@@ -787,15 +767,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/helper/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="261" column="15" selection-start-line="261" selection-start-column="15" selection-end-line="261" selection-end-column="15" />
+        <state relative-caret-position="130">
+          <caret line="255" column="28" selection-start-line="255" selection-end-line="256" />
           <folding>
             <element signature="method#loginUser#0;class#Helper#0" />
             <element signature="e#3502#5756#0" expanded="true" />
             <element signature="e#5755#5756#0" expanded="true" />
             <element signature="method#getActiveLists#0;class#Helper#0" />
             <element signature="method#GetListContacts#0;class#Helper#0" />
-            <element signature="method#connectionCheck#0;class#Helper#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/github/aymenmokthari/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1727#3009#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
           </folding>
         </state>
       </provider>
