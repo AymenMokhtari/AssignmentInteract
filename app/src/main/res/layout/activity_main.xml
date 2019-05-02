@@ -15,7 +15,7 @@
         android:background="@color/grey"
         >
         <ImageView android:src="@drawable/logo"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="72dp"
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal"
@@ -32,8 +32,10 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/orange"
-            android:textSize="20sp"
-            android:textStyle="normal" />
+            android:textSize="27dp"
+            android:textStyle="normal"
+            app:fontFamily="@font/nunitobold" />
+
         <TextView
             android:id="@+id/text2"
             android:layout_width="300dp"
@@ -45,8 +47,9 @@
             android:textAllCaps="false"
 
             android:textColor="@color/blackgrey"
-            android:textSize="15dp"
-            android:textStyle="normal" />
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:fontFamily="@font/nunitobold" />
 
 
 
@@ -58,6 +61,7 @@
             android:layout_marginTop="30dp"
             android:alpha="0.5"
             android:background="@drawable/edittextstyle"
+            android:fontFamily="@font/nunitoregular"
             android:hint="Your Email address"
             android:inputType="text"
             android:text="aymen.mokhtari@esprit.tn"
@@ -71,6 +75,7 @@
             android:layout_marginTop="20dp"
             android:alpha="0.5"
             android:background="@drawable/edittextstyle"
+            android:fontFamily="@font/nunitoregular"
             android:hint="Your Password"
             android:text="aymen123M%"
             android:inputType="textPassword"
@@ -86,6 +91,7 @@
             android:width="150dp"
             android:background="@drawable/btnraduis"
             android:text="Login"
+            android:fontFamily="@font/nunitobold"
             android:textColor="@color/white" />
 
 

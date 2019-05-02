@@ -95,41 +95,9 @@ public class Helper {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        String message = null;
-                        if (error instanceof NetworkError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-                            message = "Cannot connect to Internet...Please check your connection!";
-                        } else if (error instanceof ServerError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
+                        connectionCheck(error);
 
-                            message = "The server could not be found. Please try again after some time!!";
-                        } else if (error instanceof AuthFailureError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
 
-                            message = "Cannot connect to Internet...Please check your connection!";
-                        } else if (error instanceof ParseError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-
-                            message = "Parsing error! Please try again after some time!!";
-                        } else if (error instanceof NoConnectionError) {
-
-                            message = "Cannot connect to Internet...Please check your connection!";
-                        } else if (error instanceof TimeoutError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-
-                            message = "Connection TimeOut! Please check your internet connection.";
-                        }
-                        Log.d(TAG, "onErrorResponse: "+message);
-
-                    int status  =   error.networkResponse.statusCode ;
-                    switch (status) {
-                        case 404 :
-                            Log.d("not found"  , "not found");
-                        case 400 :
-                            Log.d("USER not found"  , "not found");
-                    }
-                        error.getStackTrace();
-                        Log.d(TAG, "onErrorResponse: ");
                     }
                 }
 
@@ -177,8 +145,8 @@ public class Helper {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
-                        System.out.println("Erreur "+error.getMessage());
-                        callback.onFail( error.getMessage() );
+                        connectionCheck(error);
+                    callback.onFail( error.getMessage() );
                     }
                 }) {
 
@@ -260,102 +228,35 @@ public class Helper {
         queue.add(stringRequest);
     }
 
-    public void logoutUser(String authToken, final VolleyCallbackUserLogin volleyCallbackUserLogin) {
 
 
-        RequestQueue queue = Volley.newRequestQueue(context);  // this = context
-        // { "id_user": "1" , "foodname": "2019", "qte": "1", "calories": "2" }
+    public void connectionCheck(VolleyError error) {
+        String message = null;
+        if (error instanceof NetworkError) {
+            message = "Cannot connect to Internet...Please check your connection!";
+        } else if (error instanceof ServerError) {
+            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
 
-        final String url = ip_address + "/logout";
-        Log.d("url" ,url);
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("authToken", authToken);
+            message = "The server could not be found. Please try again after some time!!";
+        } else if (error instanceof AuthFailureError) {
+            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
 
-// prepare the Request
-        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params),
-                new com.android.volley.Response.Listener<JSONObject>() {
+            message = "Cannot connect to Internet...Please check your connection!";
+        } else if (error instanceof ParseError) {
+            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
 
+            message = "Parsing error! Please try again after some time!!";
+        } else if (error instanceof NoConnectionError) {
 
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // display response
-                        Log.d("Response", response.toString());
-                        try {
-                            JSONObject user = response.getJSONObject("user");
+            message = "Cannot connect to Internet...Please check your connection!";
+        } else if (error instanceof TimeoutError) {
 
+            message = "Connection TimeOut! Please check your internet connection.";
+        }
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 
-                            // user successfully logged in
-                            // Create login session
-
-                            // Now store the user in SQLite
-
-                            String id = user.getString("id");
-                            String first_name = user.getString("firstName");
-                            String last_name = user.getString("lastName");
-                            String authToken = response.getJSONObject("token").getString("authToken");
-                            Toast.makeText(context, "Welcome " + first_name + " " + last_name, Toast.LENGTH_LONG).show();
-
-                            Log.d(TAG, "Welcome " + first_name + " " + last_name);
-                            // Inserting row in users table
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            volleyCallbackUserLogin.onFail(e.getMessage());
-                            Log.d(TAG, e.getMessage());
-
-                        }
-
-
-                    }
-                },
-                new com.android.volley.Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        String message = null;
-                        if (error instanceof NetworkError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-                            message = "Cannot connect to Internet...Please check your connection!";
-                        } else if (error instanceof ServerError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-
-                            message = "The server could not be found. Please try again after some time!!";
-                        } else if (error instanceof AuthFailureError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-
-                            message = "Cannot connect to Internet...Please check your connection!";
-                        } else if (error instanceof ParseError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-
-                            message = "Parsing error! Please try again after some time!!";
-                        } else if (error instanceof NoConnectionError) {
-
-                            message = "Cannot connect to Internet...Please check your connection!";
-                        } else if (error instanceof TimeoutError) {
-                            Log.d(TAG, "onErrorResponse: "+ error.networkResponse.statusCode );
-
-                            message = "Connection TimeOut! Please check your internet connection.";
-                        }
-                        Log.d(TAG, "onErrorResponse: "+message);
-
-                        int status  =   error.networkResponse.statusCode ;
-                        switch (status) {
-                            case 404 :
-                                Log.d("not found"  , "not found");
-                            case 400 :
-                                Log.d("USER not found"  , "not found");
-                        }
-                        error.getStackTrace();
-                        Log.d(TAG, "onErrorResponse: ");
-                    }
-                }
-
-        );
-        queue.add(getRequest);
-
+        Log.d(TAG, "onErrorResponse: "+message);
     }
-
 
 
     //Volley  callbacks

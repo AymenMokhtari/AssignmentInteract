@@ -21,7 +21,7 @@ public class Session {
     }
 
     public void setLoggedin(boolean logggedin, String email , String id, String authToken){
-        editor.putBoolean("loggedInmode",logggedin);
+        editor.putBoolean("loggedInmode",logggedin );
         editor.putString("id",id );
         editor.putString("email",email);
         editor.putString("authToken",authToken);

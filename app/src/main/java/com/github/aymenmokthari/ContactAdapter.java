@@ -59,7 +59,7 @@ public class ContactAdapter  extends ArrayAdapter<Contact> {
 
 
         holder.firstchar.setText(Character.toString(contact.getFirstName().toUpperCase().charAt(0)));
-        holder.name.setText(contact.getFirstName() +""+contact.getLastName());
+        holder.name.setText(contact.getFirstName() +" "+contact.getLastName());
         holder.email.setText(contact.getEmail());
         notifyDataSetChanged();
 

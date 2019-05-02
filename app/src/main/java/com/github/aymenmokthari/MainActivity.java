@@ -22,12 +22,22 @@ public class MainActivity extends AppCompatActivity {
     Helper helper;
     Session session ;
     private Context context;
+    SharedPreferences prefs;
+    int idSP;
 
 
     protected void onCreate(Bundle savedInstanceState) {
 
+        session = new Session(this  );
+        prefs = this.getSharedPreferences("myapp", this.MODE_PRIVATE);
+
 
         super.onCreate(savedInstanceState);
+        if(session.loggedin()) {
+            Intent intent = new Intent( MainActivity.this, ListActivity.class );
+            Log.d("new intent" , "net intend");
+            startActivity( intent );
+        }
         setContentView(R.layout.activity_main);
         if (android.os.Build.VERSION.SDK_INT > 9)
         {
@@ -35,12 +45,10 @@ public class MainActivity extends AppCompatActivity {
                     StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-
         login = (Button)findViewById(R.id.loginBtn);
         username = (EditText)findViewById(R.id.loginTxt);
         pass = (EditText)findViewById(R.id.passwordTxt);
         // adduser
-        session = new Session(this  );
         helper = new Helper( this );
 
         login.setOnClickListener(new View.OnClickListener() {
